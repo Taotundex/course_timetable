@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+.account {
+    background: linear-gradient(70deg, #000061 50%, #00006130 100%);
+}
 .account .container {
     backdrop-filter: blur(15px);
 }
@@ -138,4 +141,11 @@
     top: 97%;
     left: 50%;
     translate: -50% -50%;
+}
+
+
+@media screen and (max-width: 767px) {
+    .account {
+        background: linear-gradient(to top right, #000061 50%, #00006180);
+    }
 }
