@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Allocation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="dashboard grid grid-cols-5 bg-[#000061] gap-0">
+        <div class="sidebar col-span-1 lg:flex md:flex flex-col hidden justify-between h-[100vh] py-5 px-4">
+            <div class="brand-name text-[50px] font-[900] text-[#e4e4e4] bg-[#000061] flex items-center justify-center">
+                VHICTOR
+            </div>
+            <div class="links">
+                <ul class="flex flex-col gap-1">
+                    <li id="dashboard" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 text-[#e4e4e4] bg-[#000061] hover:bg-[#e4e4e4] hover:text-[#000061]">
+                        <i class="bi bi-house text-[20px]"></i>
+                        <a href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li id="lecturers" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 text-[#e4e4e4] bg-[#000061] hover:bg-[#e4e4e4] hover:text-[#000061]">
+                        <i class="bi bi-person-lines-fill text-[20px]"></i>
+                        <a href="lecturers.html">Lecturers</a>
+                    </li>
+                    <li id="courses" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 text-[#e4e4e4] bg-[#000061] hover:bg-[#e4e4e4] hover:text-[#000061]">
+                        <i class="bi bi-book-half text-[20px]"></i>
+                        <a href="courses.html">Courses</a>
+                    </li>
+                    <li id="settings" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 text-[#e4e4e4] bg-[#000061] hover:bg-[#e4e4e4] hover:text-[#000061]">
+                        <i class="bi bi-gear text-[20px]"></i>
+                        <a href="settings.html">Settings</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="logout" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#e4e4e4] text-[#000061] hover:text-[#e4e4e4] hover:bg-[#000061]">
+                <i class="bi bi-box-arrow-left text-[20px]"></i>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+        <div class="main-body h-[97vh] overflow-y-scroll lg:col-span-4 md:col-span-4 col-span-5">
+            <div class="sticky z-[100] top-0 head text-[#e4e4e4] bg-[#000061] backdrop-blur-md lg:px-5 md:px-4 px-3 h-[85px] w-full flex items-center justify-between lg:flex-row md:flex-row flex-row-reverse">
+                <i class="lg:hidden md:hidden bi bi-list lg:w-[40px] lg:h-[40px] md:w-[35px] md:h-[35px] w-[30px] h-[30px] flex items-center justify-center bg-[#e4e4e4] text-[24px] rounded-[5px] text-[#000061]"  data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation"></i>
+                <h1 class="font-[900] lg:text-[36px] md:text-[30px] text-[16px] uppercase ">Settings</h1>
+                <a href="settings.html" class="profile flex items-center gap-2">
+                    <img src="images/profile-icon.png" class="bg-[#e4e4e4] lg:w-[40px] md:w-[35px] w-[30px] lg:h-[40px] md:h-[35px] h-[30px] rounded-full border border-[#e4e4e4] p-1" width="100%" alt="profile image">
+                    <div class="name flex flex-col">
+                        <h1 class="font-[900] lg:text-[18px] text-[12px]">Hi, <span>Vhictor</span></h1>
+                        <small class="lg:text-[12px] text-[10px] leading-3">Your profile!</small>
+                    </div>
+                </a>
+            </div>
+            <div class="body bg-[#e4e4e4] shadow-lg">
+                <div class="lg:p-5 md:p-4 p-3 flex flex-col lg:gap-5 md:gap-4 gap-3">
+                    <div class="top w-full text-[#e4e4e4] lg:h-[250px] md:h-[200px] h-[150px] flex flex-col justify-center bg-[#000061] rounded-[15px] px-[30px]">
+                        <h1 class="font-[900] lg:text-[50px] md:text-[35px] text-[25px]"><span class="uppercase">Vhictor</span>'s profile!</h1>
+                        <p class="lg:text-[16px] md:text-[14px] text-[12px]">Update your profile below. Note, some profile cannot be editted...</p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-5 md:gap-4 gap-3 flex items-start">
+                        <div class="left">
+                            <form action="" method="post" enctype="multipart/form-data" class="flex flex-col lg:p-[35px] md:p-[25px] gap-3 p-5 border-2 border-[#00006180] bg-[#0000611c] rounded-[15px]">
+                                <div class="form-control flex flex-col gap-3">
+                                    <label for="" class="text-[#000061] font-[700] lg:text-[30px] md:text-[25px] text-[20px]">Upload Profile Picture</label>
+                                    <div class="inputs relative flex items-center justify-center">
+                                        <input class="z-[10] opacity-[0.00001] relative w-[200px] h-[200px] rounded-[20px]" type="file" name="picture" id="picture" title="Upload Profile Picture" required>
+                                        <div class="img absolute top-0">
+                                            <img src="images/profile-icon.png" width="100%" class="shadow-lg w-[200px] h-[200px] border-2 border-[#00006180] p-2 bg-[#e4e4e4bb] rounded-[20px]" alt="">
+                                            <i class="shadow-lg bi bi-plus-circle-fill border-2 border-[#00006180] text-[25px] text-[#000061] w-[40px] h-[40px] flex items-center justify-center bg-[#e4e4e4bb] rounded-[5px] absolute"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="w-full h-[45px] border-0 bg-[#000061] text-[#e4e4e4] rounded-full mt-5" type="submit" name="update_picture">Update Picture</button>
+                            </form>
+                        </div>
+                        <div class="right">
+                            <form action="" method="post" class="flex flex-col lg:p-[35px] md:p-[25px] gap-3 p-5 border-2 border-[#00006180] bg-[#0000611c] rounded-[15px]">
+                                <label for="" class="text-[#000061] font-[700] lg:text-[30px] md:text-[25px] text-[20px]">Update Profile Details</label>
+                                <div class="form-control">
+                                    <label for="name">Fullname:</label>
+                                    <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="text" name="name" id="name" placeholder="Your fullname">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="form-control">
+                                        <label for="email">Email Address:</label>
+                                        <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="email" name="email" id="email" placeholder="Your Email Address" readonly>
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="matric_number">Matric Number:</label>
+                                        <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="number" name="matric_number" id="matric_number" placeholder="Your matric number" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-control">
+                                    <label for="password">Old Password:</label>
+                                    <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="password" name="password" id="password" placeholder="* * * * * * * *" readonly>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="form-control">
+                                        <label for="password">New Password:</label>
+                                        <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="password" name="new_password" id="new_password" placeholder="* * * * * * * *">
+                                    </div>
+                                    <div class="form-control">
+                                        <label for="password">Confirm New Password:</label>
+                                        <input class="w-full px-3 h-[45px] border-1 border-[#00006180] bg-[#e4e4e4bb] rounded-[5px] outline-0" type="password" name="confirm_new_password" id="confirm_new_password" placeholder="* * * * * * * *">
+                                    </div>
+                                </div>
+                                <button class="w-full h-[45px] border-0 bg-[#000061] text-[#e4e4e4] rounded-full" type="submit" name="update_profile">Update Profile</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="drawer-navigation" class="z-[1000] fixed top-0 left-0 w-[300px] h-[100vh] p-4 overflow-y-scroll transition-transform -translate-x-full bg-[#e4e4e4] backdrop-blur-md" tabindex="-1" aria-labelledby="drawer-navigation-label">
+            <!-- <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5> -->
+            <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                <span class="sr-only">Close menu</span>
+            </button>
+            <div class="sidebar flex flex-col h-[80vh] justify-between py-[25px]">
+                <div class="brand-name text-[50px] font-[900] bg-[#e4e4e4] text-[#000061] flex items-center justify-center">
+                    VHICTOR
+                </div>
+                <div class="links">
+                    <ul class="flex flex-col gap-1">
+                        <li id="dashboard" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#e4e4e4] text-[#000061] hover:text-[#e4e4e4] hover:bg-[#000061]">
+                            <i class="bi bi-house text-[20px]"></i>
+                            <a href="dashboard.html">Dashboard</a>
+                        </li>
+                        <li id="lecturers" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#e4e4e4] text-[#000061] hover:text-[#e4e4e4] hover:bg-[#000061]">
+                            <i class="bi bi-person-lines-fill text-[20px]"></i>
+                            <a href="lecturers.html">Lecturers</a>
+                        </li>
+                        <li id="courses" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#e4e4e4] text-[#000061] hover:text-[#e4e4e4] hover:bg-[#000061]">
+                            <i class="bi bi-book-half text-[20px]"></i>
+                            <a href="courses.html">Courses</a>
+                        </li>
+                        <li id="settings" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#e4e4e4] text-[#000061] hover:text-[#e4e4e4] hover:bg-[#000061]">
+                            <i class="bi bi-gear text-[20px]"></i>
+                            <a href="settings.html">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="logout" class="h-[45px] flex items-center gap-3 rounded-[5px] font-medium px-4 bg-[#000061] text-[#e4e4e4] hover:bg-[#e4e4e4] hover:text-[#000061]">
+                    <i class="bi bi-box-arrow-left text-[20px]"></i>
+                    <a href="logout.php">Logout</a>
+                </div>
+           </div>
+        </div>
+    </div>
+
+
+    <script>
+        const currentPageId = "settings";
+        document.getElementById(currentPageId).classList.add("active");
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</body>
+</html>

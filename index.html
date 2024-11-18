@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Timetable Allocation System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Lecturers</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Timetables</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="lecturer-section">
+            <h2>Lecturers</h2>
+            <form id="lecturer-form" method="post" action="lecturers.php">
+                <label for="lecturer-name">Name:</label>
+                <input type="text" id="lecturer-name" name="lecturer-name"><br><br>
+                <label for="lecturer-email">Email:</label>
+                <input type="email" id="lecturer-email" name="lecturer-email"><br><br>
+                <label for="lecturer-password">Password:</label>
+                <input type="password" id="lecturer-password" name="lecturer-password"><br><br>
+                <button type="submit" id="add-lecturer-btn">Add Lecturer</button>
+            </form>
+            <div id="lecturer-list"></div>
+        </section>
+
+        <section id="student-section">
+            <h2>Students</h2>
+            <form id="student-form" method="post" action="students.php">
+                <label for="student-name">Name:</label>
+                <input type="text" id="student-name" name="student-name"><br><br>
+                <label for="student-email">Email:</label>
+                <input type="email" id="student-email" name="student-email"><br><br>
+                <label for="student-password">Password:</label>
+                <input type="password" id="student-password" name="student-password"><br><br>
+                <button id="add-student-btn">Add Student</button>
+            </form>
+            <div id="student-list"></div>
+        </section>
+
+        <section id="course-section">
+            <h2>Courses</h2>
+            <form id="course-form" method="post" action="courses.php">
+                <label for="course-name">Name:</label>
+                <input type="text" id="course-name" name="course-name"><br><br>
+                <label for="course-description">Description:</label>
+                <textarea id="course-description" name="course-description"></textarea><br><br>
+                <label for="course-lecturer">Lecturer:</label>
+                <select id="course-lecturer" name="course-lecturer"></select><br><br>
+                <button id="add-course-btn">Add Course</button>
+            </form>
+            <div id="course-list"></div>
+        </section>
+        <section id="timetable-section">
+            <h2>Timetables</h2>
+            <form id="timetable-form" method="post" action="timetables.php">
+                <label for="timetable-course">Course:</label>
+                <select id="timetable-course" name="timetable-course"></select><br><br>
+                <label for="timetable-lecturer">Lecturer:</label>
+                <select id="timetable-lecturer" name="timetable-lecturer"></select><br><br>
+                <label for="timetable-student">Student:</label>
+                <select id="timetable-student" name="timetable-student"></select><br><br>
+                <label for="timetable-day">Day:</label>
+                <input type="date" id="timetable-day" name="timetable-day"><br><br>
+                <label for="timetable-time">Time:</label>
+                <input type="time" id="timetable-time" name="timetable-time"><br><br>
+                <button id="add-timetable-btn">Add Timetable</button>
+            </form>
+            <div id="timetable-list"></div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.account .container {
+    backdrop-filter: blur(15px);
+}
+::placeholder {
+    color: #000061 !important;
+    font-style: italic;
+    font-weight: 200 !important;
+}
+
+
+
+.sidebar {
+    overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar, .main-body::-webkit-scrollbar {
+    display: none;
+    
+}
+.links ul li.active {
+    background: #e4e4e4;
+    color: #000061;
+}
+.links ul li {
+    list-style-type: none;
+    transition: .25s ease;
+}
+#logout {
+    border: 1px solid #e4e4e430;
+    transition: .25s ease;
+}
+.calendar-container {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #000061;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.calendar-header button:hover {
+    font-weight: bold;
+}
+
+#month-year {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar-days,
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 5px;
+    text-align: center;
+}
+.calendar-dates {
+    padding: 10px 0;
+}
+
+.calendar-days div {
+    font-weight: bold;
+    padding: 10px 0;
+    background: #00006130;
+}
+
+.calendar-dates div {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.calendar-dates div:hover {
+    background-color: #00006180;
+    color: white;
+    border-radius: 5px;
+}
+
+.calendar-dates div.inactive {
+    color: #ccc;
+    cursor: not-allowed;
+}
+.calendar-dates div.inactive:hover {
+    background: #00006130;
+    color: #000061;
+}
+.calendar-dates div.today {
+    background: #000061;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.clock-container {
+    background: #000061;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+.body tbody tr{
+    color: #000061;
+}
+.body tbody tr:nth-child(odd){
+    background: #00006130;
+}
+.body tbody tr:nth-child(even){
+    background: #00006180;
+}
+.body tbody tr:nth-child(odd){
+    background: #00006130;
+}
+
+.bi-plus-circle-fill {
+    top: 97%;
+    left: 50%;
+    translate: -50% -50%;
+}
